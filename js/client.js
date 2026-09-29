@@ -62,7 +62,7 @@ function bell(s, me) {
 
 const topbar = (s, me) => `
   <header class="m-top">
-    <a href="#/c/home" class="m-top__logo" aria-label="Мотив — на главную">${logo()}</a>
+    <a href="#/c/home" class="m-top__logo" aria-label="Досье — на главную">${logo()}</a>
     <div class="m-top__right">
       <a class="icon-btn" href="#/c/calendar" aria-label="Календарь">${icon('calendar')}</a>
       ${bell(s, me)}
@@ -243,7 +243,7 @@ function wizard(s, me, step) {
         <div class="summary__row"><span>Ситуация</span><b class="clamp-2">${esc(w.description)}</b></div>
         <div class="summary__row"><span>Документы</span><b>${w.files.length ? `${w.files.length} ${plural(w.files.length, 'файл', 'файла', 'файлов')}` : 'Не добавлены'}</b></div>
       </div>
-      <p class="hint">Нажимая «Отправить обращение», вы соглашаетесь на обработку персональных данных. Данные видят только юристы «Мотива».</p>
+      <p class="hint">Нажимая «Отправить обращение», вы соглашаетесь на обработку персональных данных. Данные видят только юристы «Досье».</p>
     </div>`,
     footer: `<div class="m-cta"><button class="btn btn--primary btn--lg btn--block" data-act="c.submit">Отправить обращение</button></div>`,
   };
@@ -318,7 +318,7 @@ function caseScreen(s, me, id) {
         ${pill(CASE_STATUS[c.status], `cs:${c.id}`)}
       </div>
       <dl class="facts">
-        <div><dt>Номер дела</dt><dd>${c.number}</dd></div>
+        <div><dt>Номер дела</dt><dd class="mono">${c.number}</dd></div>
         <div><dt>Дата открытия</dt><dd>${fmtDate(c.openedAt)}</dd></div>
         ${c.deadline && c.status !== 'done' ? `<div><dt>Ближайший срок</dt><dd>${fmtDate(c.deadline)} <small>${deadlineText(c.deadline)}</small></dd></div>` : ''}
         <div><dt>Обновлено</dt><dd>${relTime(c.updatedAt)}</dd></div>
@@ -404,7 +404,7 @@ function chats(s, me) {
         ${l ? avatar(l) : `<span class="avatar avatar--md avatar--brand">${icon('chat')}</span>`}
         <span class="thread-row__main">
           <span class="thread-row__top"><b>${esc(t.title)}</b><time>${relTime(t.last.at)}</time></span>
-          <span class="thread-row__sub">${l ? esc(l.name) : 'Юридическая компания «Мотив»'}</span>
+          <span class="thread-row__sub">${l ? esc(l.name) : 'Юридическая компания «Досье»'}</span>
           <span class="thread-row__last">${esc(lastText)}</span>
         </span>
         ${unread ? `<span class="badge badge--inline">${unread}</span>` : ''}

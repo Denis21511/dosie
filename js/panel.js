@@ -374,7 +374,7 @@ function clientDetail(s, me, id) {
           <div class="table-wrap"><table class="table">
             <thead><tr><th>Дело</th><th>Юрист</th><th>Статус</th><th>Срок</th></tr></thead>
             <tbody>${cs.map((k) => `<tr data-go="#/l/case/${k.id}" tabindex="0">
-              <td data-label="Дело"><b>${esc(k.title)}</b><small class="block muted">${k.number}</small></td>
+              <td data-label="Дело"><b>${esc(k.title)}</b><small class="block muted mono">${k.number}</small></td>
               <td data-label="Юрист">${esc(lawyer(s, k.lawyerId)?.name)}</td>
               <td data-label="Статус">${pill(CASE_STATUS[k.status])}</td>
               <td data-label="Срок" class="nowrap">${k.deadline && k.status !== 'done' ? deadlineText(k.deadline) : '—'}</td></tr>`).join('') || '<tr><td colspan="4" class="muted center">Дел нет</td></tr>'}</tbody>
@@ -435,7 +435,7 @@ function cases(s, me) {
         <tbody>${list.map((k) => {
           const d = k.deadline ? dayDiff(k.deadline) : null;
           return `<tr data-go="#/l/case/${k.id}" tabindex="0" data-k="kr:${k.id}">
-          <td data-label="Дело"><b>${esc(k.title)}</b><small class="block muted">${k.number} · ${category(k.category).title}</small></td>
+          <td data-label="Дело"><b>${esc(k.title)}</b><small class="block muted"><span class="mono">${k.number}</span> · ${category(k.category).title}</small></td>
           <td data-label="Клиент">${esc(client(s, k.clientId).name)}</td>
           <td data-label="Юрист">${personCell(lawyer(s, k.lawyerId))}</td>
           <td data-label="Статус">${pill(CASE_STATUS[k.status], `ks:${k.id}`)}</td>
@@ -536,7 +536,7 @@ function caseDetail(s, me, id, tab = 'overview') {
       </div>
     </div>
     <div class="case-meta">
-      <div><small>Номер</small><b>${k.number}</b></div>
+      <div><small>Номер</small><b class="mono">${k.number}</b></div>
       <div><small>Клиент</small><a href="#/l/client/${c.id}"><b>${esc(c.name)}</b></a></div>
       <div class="pop-wrap"><small>Ответственный юрист</small><button class="link-btn link-btn--strong" data-act="l.pop" data-pop="caseLawyer:${k.id}">${esc(l.name)}${icon('down')}</button>${lawyerPopHtml}</div>
       <div><small>Статус</small><b>${CASE_STATUS[k.status].label}</b></div>

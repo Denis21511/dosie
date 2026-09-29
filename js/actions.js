@@ -175,7 +175,7 @@ export function createCase(requestId, { title, deadline, lawyerId, summary }) {
   return mutate((s) => {
     const r = requestOf(s, requestId);
     const l = lawyer(s, lawyerId || r.lawyerId || s.me.lawyerId);
-    const number = `М-26/${String(s.seq.case++).padStart(3, '0')}`;
+    const number = `Д-26/${String(s.seq.case++).padStart(3, '0')}`;
     const kase = {
       id: uid('k'), number, title, category: r.category, clientId: r.clientId, lawyerId: l.id,
       status: 'review', openedAt: now(), deadline: deadline || null, updatedAt: now(), requestId: r.id, threadId: r.threadId,

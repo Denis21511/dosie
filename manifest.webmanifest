@@ -1,10 +1,10 @@
 {
-  "name": "Мотив — юридическая помощь в одном месте",
-  "short_name": "Мотив",
+  "name": "Досье — юридическая помощь в одном месте",
+  "short_name": "Досье",
   "start_url": "./#/c/home",
   "display": "standalone",
-  "background_color": "#f4f6f9",
-  "theme_color": "#f4f6f9",
+  "background_color": "#f4f3ef",
+  "theme_color": "#f4f3ef",
   "lang": "ru",
   "icons": [{ "src": "img/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
 }

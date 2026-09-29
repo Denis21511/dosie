@@ -15,7 +15,7 @@ const parse = () => location.hash.replace(/^#\/?/, '').split('/').filter(Boolean
 let lastKey = null;
 let demoMounted = false;
 
-const TITLES = { c: 'Мотив — личный кабинет', l: 'Мотив — рабочее место юриста', demo: 'Мотив — демо: клиент и юрист' };
+const TITLES = { c: 'Досье — личный кабинет', l: 'Досье — рабочее место юриста', demo: 'Досье — демо: клиент и юрист' };
 
 function autogrow(el) {
   el.style.height = 'auto';
@@ -26,7 +26,7 @@ function render() {
   const route = parse();
   const area = route[0] || '';
   document.documentElement.dataset.area = area || 'entry';
-  document.title = TITLES[area] || 'Мотив — юридическая помощь в одном месте';
+  document.title = TITLES[area] || 'Досье — юридическая помощь в одном месте';
 
   if (area === 'demo') {
     if (!demoMounted) { root.innerHTML = mountDemo(); demoMounted = true; }

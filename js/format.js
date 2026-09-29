@@ -181,11 +181,12 @@ export function fileBadge(type) {
   return `<span class="fbadge fbadge--${esc(type)}">${esc(t === 'JPEG' ? 'JPG' : t)}</span>`;
 }
 
+// Знак — папка-досье с ярлыком: всё по делу собрано в одном месте.
 export const logoMark = (cls = '') =>
-  `<svg class="logo-mark ${cls}" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="var(--navy)"/><path d="M9.5 22V10l6.5 7.5L22.5 10v12" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><rect x="14.6" y="20.6" width="2.8" height="2.8" rx=".6" fill="var(--sky)"/></svg>`;
+  `<svg class="logo-mark ${cls}" viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 8.5A1.5 1.5 0 0 1 5.5 7h7l2.5 3h11.5A1.5 1.5 0 0 1 28 11.5v13a1.5 1.5 0 0 1-1.5 1.5h-21A1.5 1.5 0 0 1 4 24.5Z"/><path d="M4 13.5h24"/><rect class="accent" x="10.5" y="17.5" width="11" height="4.5" rx=".6"/></svg>`;
 
 export const logo = (withTagline = false) =>
-  `<span class="logo">${logoMark()}<span class="logo__text"><span class="logo__name">Мотив</span>${withTagline ? '<span class="logo__tag">Юридическая помощь в одном месте</span>' : ''}</span></span>`;
+  `<span class="logo">${logoMark()}<span class="logo__text"><span class="logo__name">Досье</span>${withTagline ? '<span class="logo__tag">Юридическая помощь в одном месте</span>' : ''}</span></span>`;
 
 // ——— Выборки ———
 

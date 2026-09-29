@@ -20,9 +20,9 @@ export function createSeed() {
   const id = (p) => `${p}${++n}`;
 
   const lawyers = [
-    { id: 'l1', name: 'Анна Соколова', role: 'Управляющий партнёр', area: 'Семейное и наследственное право', phone: '+7 (351) 200-40-41', email: 'sokolova@motiv-law.ru', tone: 1 },
-    { id: 'l2', name: 'Дмитрий Ершов', role: 'Старший юрист', area: 'Договоры и судебные споры', phone: '+7 (351) 200-40-42', email: 'ershov@motiv-law.ru', tone: 2 },
-    { id: 'l3', name: 'Мария Кузнецова', role: 'Юрист', area: 'Трудовые споры, защита прав потребителей', phone: '+7 (351) 200-40-43', email: 'kuznetsova@motiv-law.ru', tone: 3 },
+    { id: 'l1', name: 'Анна Соколова', role: 'Управляющий партнёр', area: 'Семейное и наследственное право', phone: '+7 (351) 200-40-41', email: 'sokolova@dosie-law.ru', tone: 1 },
+    { id: 'l2', name: 'Дмитрий Ершов', role: 'Старший юрист', area: 'Договоры и судебные споры', phone: '+7 (351) 200-40-42', email: 'ershov@dosie-law.ru', tone: 2 },
+    { id: 'l3', name: 'Мария Кузнецова', role: 'Юрист', area: 'Трудовые споры, защита прав потребителей', phone: '+7 (351) 200-40-43', email: 'kuznetsova@dosie-law.ru', tone: 3 },
   ];
 
   const clients = [
@@ -57,7 +57,7 @@ export function createSeed() {
 
   const cases = [
     {
-      id: 'k1', number: 'М-26/037', title: 'Спор по договору подряда', category: 'contracts', clientId: 'c1', lawyerId: 'l2',
+      id: 'k1', number: 'Д-26/037', title: 'Спор по договору подряда', category: 'contracts', clientId: 'c1', lawyerId: 'l2',
       status: 'work', openedAt: ago(23 * DAY), deadline: dayAt(21, 18), updatedAt: ago(26 * HOUR), requestId: 'r1041', threadId: 't1041',
       summary: 'Подрядчик нарушил сроки ремонта и требует доплату сверх сметы. Направлена досудебная претензия, ждём ответ.',
       timeline: [
@@ -75,7 +75,7 @@ export function createSeed() {
       ],
     },
     {
-      id: 'k2', number: 'М-26/041', title: 'Раздел имущества', category: 'family', clientId: 'c1', lawyerId: 'l1',
+      id: 'k2', number: 'Д-26/041', title: 'Раздел имущества', category: 'family', clientId: 'c1', lawyerId: 'l1',
       status: 'docs', openedAt: ago(8 * DAY), deadline: dayAt(30, 18), updatedAt: ago(50 * MIN), requestId: 'r1043', threadId: 't1043',
       summary: 'Раздел квартиры и автомобиля по соглашению супругов. Готовим проект соглашения, нужна свежая выписка из ЕГРН.',
       timeline: [
@@ -92,7 +92,7 @@ export function createSeed() {
       ],
     },
     {
-      id: 'k5', number: 'М-26/029', title: 'Взыскание долга с ООО «Стройресурс»', category: 'debts', clientId: 'c5', lawyerId: 'l2',
+      id: 'k5', number: 'Д-26/029', title: 'Взыскание долга с ООО «Стройресурс»', category: 'debts', clientId: 'c5', lawyerId: 'l2',
       status: 'court', openedAt: ago(50 * DAY), deadline: dayAt(3, 10, 30), updatedAt: ago(2 * HOUR), requestId: 'r1039', threadId: 't1039',
       summary: 'Взыскание 1,2 млн ₽ по договору поставки и неустойки. Иск принят арбитражным судом, назначено заседание.',
       timeline: [
@@ -109,7 +109,7 @@ export function createSeed() {
       ],
     },
     {
-      id: 'k6', number: 'М-26/034', title: 'Регистрация сделки с квартирой', category: 'realty', clientId: 'c6', lawyerId: 'l1',
+      id: 'k6', number: 'Д-26/034', title: 'Регистрация сделки с квартирой', category: 'realty', clientId: 'c6', lawyerId: 'l1',
       status: 'work', openedAt: ago(29 * DAY), deadline: dayAt(12, 18), updatedAt: ago(30 * MIN), requestId: 'r1040', threadId: 't1040',
       summary: 'Регистрация приостановлена из-за ошибок в договоре. Готовим исправленный договор и пакет документов.',
       timeline: [
@@ -122,7 +122,7 @@ export function createSeed() {
       activity: [{ id: id('a'), at: ago(29 * DAY), text: 'Дело открыто по обращению №1040' }],
     },
     {
-      id: 'k7', number: 'М-26/022', title: 'Восстановление на работе', category: 'labor', clientId: 'c7', lawyerId: 'l3',
+      id: 'k7', number: 'Д-26/022', title: 'Восстановление на работе', category: 'labor', clientId: 'c7', lawyerId: 'l3',
       status: 'done', openedAt: ago(68 * DAY), deadline: null, updatedAt: ago(6 * DAY), requestId: 'r1042', threadId: 't1042',
       summary: 'Суд признал увольнение незаконным. Клиент восстановлен, взыскан средний заработок за время вынужденного прогула.',
       timeline: [
@@ -175,7 +175,7 @@ export function createSeed() {
 
   const messages = [
     msg('t1041', 'c1', 'system', 'Обращение №1041 принято', ago(24 * DAY), { kind: 'request' }),
-    msg('t1041', 'c1', 'system', 'Открыто дело М-26/037 «Спор по договору подряда»', ago(23 * DAY), { kind: 'case' }),
+    msg('t1041', 'c1', 'system', 'Открыто дело Д-26/037 «Спор по договору подряда»', ago(23 * DAY), { kind: 'case' }),
     msg('t1041', 'c1', 'lawyer', 'Елена, здравствуйте! Я Дмитрий Ершов, буду вести ваше дело. Посмотрел договор: срок и цена в нём зафиксированы, требовать доплату подрядчик не вправе. Подготовлю претензию.', ago(23 * DAY - 2 * HOUR), { lawyerId: 'l2' }),
     msg('t1041', 'c1', 'client', 'Спасибо! Жду.', ago(23 * DAY - 3 * HOUR)),
     msg('t1041', 'c1', 'system', 'Документ загружен: Претензия подрядчику.docx', ago(2 * DAY), { kind: 'doc' }),
@@ -184,7 +184,7 @@ export function createSeed() {
     msg('t1041', 'c1', 'lawyer', 'Отправил. Срок ответа — 10 дней, я отслеживаю и напишу, как только будет ответ.', ago(26 * HOUR), { lawyerId: 'l2' }),
 
     msg('t1043', 'c1', 'system', 'Обращение №1043 принято', ago(9 * DAY), { kind: 'request' }),
-    msg('t1043', 'c1', 'system', 'Открыто дело М-26/041 «Раздел имущества»', ago(8 * DAY), { kind: 'case' }),
+    msg('t1043', 'c1', 'system', 'Открыто дело Д-26/041 «Раздел имущества»', ago(8 * DAY), { kind: 'case' }),
     msg('t1043', 'c1', 'lawyer', 'Елена, добрый день. Для соглашения о разделе понадобятся документы на квартиру и автомобиль. Свидетельство о браке уже получила, спасибо.', ago(8 * DAY - HOUR), { lawyerId: 'l1' }),
     msg('t1043', 'c1', 'client', 'Хорошо, ПТС загружу сегодня.', ago(8 * DAY - 2 * HOUR)),
     msg('t1043', 'c1', 'system', 'Документ загружен: ПТС автомобиля.pdf', ago(26 * HOUR + 10 * MIN), { kind: 'doc' }),
@@ -276,7 +276,7 @@ export function createSeed() {
     seq: { request: 1048, case: 42, invoice: 318 },
     me: { clientId: 'c1', lawyerId: 'l1' },
     company: {
-      name: 'Мотив', tagline: 'Юридическая помощь в одном месте', phone: '+7 (351) 200-40-40', email: 'hello@motiv-law.ru',
+      name: 'Досье', tagline: 'Юридическая помощь в одном месте', phone: '+7 (351) 200-40-40', email: 'hello@dosie-law.ru',
       address: 'Челябинск, ул. Кирова, 110, офис 305', hours: 'Пн–Пт, 9:00–19:00', replySla: 2,
       notifyEmail: true, notifySms: true, autoAssign: false,
     },

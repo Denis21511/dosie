@@ -57,7 +57,7 @@ export function mountDemo() {
       </section>
       <section class="demo__desk-col">
         <div class="demo__label">${icon('monitor')}Юрист · рабочее место</div>
-        <div class="desk"><div class="desk__bar"><i></i><i></i><i></i><span>motiv-law.ru/panel</span></div><iframe title="Панель юриста" src="index.html#/l/overview"></iframe></div>
+        <div class="desk"><div class="desk__bar"><i></i><i></i><i></i><span>dosie-law.ru/panel</span></div><iframe title="Панель юриста" src="index.html#/l/overview"></iframe></div>
       </section>
     </div>
   </div>`;

@@ -2,7 +2,7 @@
 // одно состояние; изменения расходятся между вкладками через событие storage.
 import { createSeed, VERSION } from './seed.js';
 
-const KEY = 'motiv-legal:state';
+const KEY = 'dosie:state';
 let state = null;
 const listeners = new Set();
 
